@@ -1,23 +1,27 @@
-import InputHook from "./InputHook"
+import React from 'react';
+import useInput from './useInput';
+import {InputContext} from '../../contexts/inputContext';
 
 const Inputbuilder = ({fields}) => {
-    const { input, handleChange } = InputHook();
+    const { input, handleChange } = useInput();
+
     return (
-        <div>
-            {fields.map((field,k) => (
-                <span key={k}>
-                <label className={field.name+"-label"} htmlFor={field.name}>{field.label}</label>
-                <input
-                className={field.name+"-input"}
-                name={field.name}
-                id={field.name}
-                type={field.type}
-                value={input.val}
-                onChange={handleChange}
-                />
-                </span>
-            ))}
-        </div>
+        <InputContext.Provider value={{input, handleChange}}>
+            <div>
+                {fields.map((field, k) => (
+                    <div key={k}>
+                    <label htmlFor={field.name}>{field.label}</label>
+                    <input
+                    name={field.name}
+                    id={field.name}
+                    type={field.type}
+                    value={input.val}
+                    onChange={handleChange}
+                    />
+                    </div>
+                ))}
+            </div>
+        </InputContext.Provider>
     )
 }
 

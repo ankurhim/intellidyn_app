@@ -1,17 +1,18 @@
 import React from 'react';
 
 const useInput = () => {
-    const [input, setInput] = React.useState("");
+    const [input, setInput] = React.useState({});
 
-    const handleInput = e => {
+    const handleChange = e => {
         e.preventDefault();
         setInput({...input, [e.target.name]: e.target.value});
+        return input;
     };
 
     return {
         input,
-        handleInput
+        handleChange
     };
-};
+}
 
 export default useInput;

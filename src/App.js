@@ -1,11 +1,11 @@
-import './App.css';
-import React from 'react';
-import Formbuilder from './components/forms/Formbuilder';
+import SignUp from './pages/SignUp';
 
-const App = () => {
-  return(
-    <Formbuilder />
+const AppRouter = () => {
+  return (
+    <div>
+      <SignUp />
+    </div>
   )
-}
+};
 
-export default App;
+export default AppRouter;
