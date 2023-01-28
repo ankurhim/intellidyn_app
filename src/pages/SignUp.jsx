@@ -4,8 +4,7 @@ import Buttonbuilder from '../components/buttons/Buttonbuilder';
 const SignUp = () => {
     return (
         <>
-        <Inputbuilder fields={inputFields} />
-        <Buttonbuilder />
+        <Inputbuilder fields={inputFields} Children={Buttonbuilder}/>
         </>
     )
 }

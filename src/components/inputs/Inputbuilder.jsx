@@ -2,7 +2,7 @@ import React from 'react';
 import useInput from './useInput';
 import {InputContext} from '../../contexts/inputContext';
 
-const Inputbuilder = ({fields}) => {
+const Inputbuilder = ({fields, Children}) => {
     const { input, handleChange } = useInput();
 
     return (
@@ -20,6 +20,9 @@ const Inputbuilder = ({fields}) => {
                     />
                     </div>
                 ))}
+            </div>
+            <div>
+                <Children />
             </div>
         </InputContext.Provider>
     )

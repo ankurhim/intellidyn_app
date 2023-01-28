@@ -2,12 +2,21 @@ import React from 'react';
 import {InputContext} from '../../contexts/inputContext';
 
 const Buttonbuilder = () => {
-    const {input, handleChange} = React.useContext(InputContext);
+    const {input} = React.useContext(InputContext);
 
     return (
+        <>
         <div>
-            <button onClick={handleChange}>Submit</button>
+            <button onClick={() => console.log(input)}>Submit</button>
         </div>
+        <div>
+            Results:
+            <div>
+                Username: {input.name}
+                Password: {input.password}
+            </div>
+        </div>
+        </>
     )
 }
 
