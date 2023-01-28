@@ -2,9 +2,9 @@ import React from 'react';
 import useButton from './useButton';
 
 const Buttonbuilder = () => {
-    const { user, handleSubmit } = useButton();
+    const { data, handleSubmit } = useButton();
     
-    const userDetails = Object.entries(user);
+    const dataValues = Object.entries(data);
 
     return (
         <>
@@ -14,8 +14,8 @@ const Buttonbuilder = () => {
         <div>
             Results:
             <div>
-                {userDetails.map((user, k) => (
-                    <div key={k}>{user[0]} : {user[1]}</div>
+                {dataValues.map((data, k) => (
+                    <div key={k}>{data[0]} : {data[1]}</div>
                 ))} <br/>
             </div>
         </div>

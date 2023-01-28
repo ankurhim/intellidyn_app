@@ -1,16 +1,16 @@
 import React from 'react';
 import useInput from './useInput';
-import {InputContext} from '../../contexts/inputContext';
+import {Context} from '../../contexts/Context';
 
 const Inputbuilder = ({fields, Children}) => {
     const { input, handleChange } = useInput();
 
     return (
-        <InputContext.Provider value={{input, handleChange}}>
+        <Context.Provider value={{input, handleChange}}>
             <div>
                 {fields.map((field, k) => (
                     <div key={k}>
-                    <label htmlFor={field.name}>{field.label}</label>
+                    <label htmlFor={field.name}>{field.label} : </label>
                     <input
                     name={field.name}
                     id={field.name}
@@ -24,7 +24,7 @@ const Inputbuilder = ({fields, Children}) => {
             <div>
                 <Children />
             </div>
-        </InputContext.Provider>
+        </Context.Provider>
     )
 }
 

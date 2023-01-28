@@ -1,17 +1,17 @@
 import React from 'react';
-import {InputContext} from '../../contexts/inputContext';
+import {Context} from '../../contexts/Context';
 
 const useButton = () => {
-    const {input} = React.useContext(InputContext);
-    const [user, setUser] = React.useState({});
+    const {input} = React.useContext(Context);
+    const [data, setData] = React.useState({});
 
     const handleSubmit = e => {
         e.preventDefault();
-        setUser(input)
+        setData(input)
     }
 
     return {
-        user,
+        data,
         handleSubmit
     };
 }

@@ -37,4 +37,4 @@ const inputFields = [
         name: "password",
         type: "password"
     }
-]
+];
