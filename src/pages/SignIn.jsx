@@ -1,7 +1,7 @@
 import Inputbuilder from '../components/inputs/Inputbuilder';
 import Buttonbuilder from '../components/buttons/Buttonbuilder';
 
-const SignUp = () => {
+const SignIn = () => {
     return (
         <>
         <Inputbuilder fields={inputFields} Children={Buttonbuilder}/>
@@ -9,27 +9,12 @@ const SignUp = () => {
     )
 }
 
-export default SignUp;
+export default SignIn;
 
 const inputFields = [
     {
-        label: "First Name",
-        name: "firstName",
-        type: "text"
-    },
-    {
-        label: "Middle Name",
-        name: "middleName",
-        type: "text"
-    },
-    {
-        label: "Last Name",
-        name: "lastName",
-        type: "text"
-    },
-    {
-        label: "Username",
-        name: "username",
+        label: "Name",
+        name: "name",
         type: "text"
     },
     {

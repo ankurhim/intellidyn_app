@@ -3,6 +3,8 @@ import useButton from './useButton';
 
 const Buttonbuilder = () => {
     const { user, handleSubmit } = useButton();
+    
+    const userDetails = Object.entries(user);
 
     return (
         <>
@@ -12,12 +14,13 @@ const Buttonbuilder = () => {
         <div>
             Results:
             <div>
-                Username: {user.name}
-                Password: {user.password}
+                {userDetails.map((user, k) => (
+                    <div key={k}>{user[0]} : {user[1]}</div>
+                ))} <br/>
             </div>
         </div>
         </>
     )
-}
+};
 
 export default Buttonbuilder;
