@@ -9,7 +9,7 @@ const Buttonbuilder = () => {
     return (
         <>
         <div>
-            <button onClick={handleSubmit}>Submit</button>
+            <button className="w3-button w3-black w3-margin-bottom" onClick={handleSubmit}><i class="fa fa-paper-plane w3-margin-right"></i>Submit</button>
         </div>
         <div>
             Results:
